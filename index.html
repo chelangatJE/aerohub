@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroHub | Aerospace Revision Library</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobile Responsiveness Guardrails */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 16px !important;
+            }
+            .navbar nav {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+            }
+            .year-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .about h2 {
+                font-size: 1.8rem !important;
+            }
+            section {
+                padding: 40px 16px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; background: #0f172a; color: white; position: sticky; top: 0; z-index: 100;">
+    <a href="#" class="logo" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem;">✈ AEROHUB</a>
+    <nav style="display: flex; gap: 24px;">
+        <a href="#home" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem;">Home</a>
+        <a href="#library" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem;">Library</a>
+        <a href="#about" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem;">About</a>
+    </nav>
+    <div id="auth-nav-container">
+        <button class="login-btn" onclick="openLoginModal()" style="background: #f97316; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+            Student Login
+        </button>
+    </div>
+</header>
+
+<section class="hero" id="home" style="padding: 80px 20px; text-align: center; background: #090d16; color: white;">
+    <div class="hero-content" style="max-width: 700px; margin: 0 auto;">
+        <p class="eyebrow" style="color: #f97316; font-weight: 700; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 12px;">THE AEROSPACE REVISION HUB</p>
+        <h1 style="font-size: 3rem; margin-bottom: 20px; color: #f8fafc;">Your Aerospace Journey.<br>
+            <span style="color: #f97316;">One Library.</span>
+        </h1>
+        <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
+            Access revision materials, past papers, lecture notes
+            and engineering resources from Year 1 to Year 4.
+        </p>
+        <a href="#library" class="main-btn" style="display: inline-block; background: #f97316; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">Explore Library →</a>
+    </div>
+</section>
+
+<section class="library" id="library" style="padding: 80px 20px; background: #0f172a; color: white;">
+    <div class="section-heading" style="text-align: center; max-width: 600px; margin: 0 auto 50px auto;">
+        <p class="eyebrow" style="color: #f97316; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;">ACADEMIC RESOURCES</p>
+        <h2 style="font-size: 2.2rem; margin-bottom: 12px; color: #f8fafc;">Explore Your Academic Year</h2>
+        <p style="color: #94a3b8;">Select your year to access your revision library.</p>
+    </div>
+
+    <div class="year-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 40px auto;">
+        <div class="year-card" onclick="selectYear(1)" style="background: #1e293b; padding: 28px; border-radius: 12px; cursor: pointer; border: 1px solid #334155; transition: transform 0.2s;">
+            <span style="color: #f97316; font-weight: bold; font-size: 1.2rem;">01</span>
+            <h3 style="margin: 12px 0 8px 0; color: #f8fafc; font-size: 1.25rem;">Year One</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Engineering Foundations</p>
+            <button style="background: transparent; border: none; color: #f97316; font-weight: 600; cursor: pointer; padding: 0;">Explore →</button>
+        </div>
+
+        <div class="year-card" onclick="selectYear(2)" style="background: #1e293b; padding: 28px; border-radius: 12px; cursor: pointer; border: 1px solid #334155; transition: transform 0.2s;">
+            <span style="color: #f97316; font-weight: bold; font-size: 1.2rem;">02</span>
+            <h3 style="margin: 12px 0 8px 0; color: #f8fafc; font-size: 1.25rem;">Year Two</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Core Engineering Studies</p>
+            <button style="background: transparent; border: none; color: #f97316; font-weight: 600; cursor: pointer; padding: 0;">Explore →</button>
+        </div>
+
+        <div class="year-card" onclick="selectYear(3)" style="background: #1e293b; padding: 28px; border-radius: 12px; cursor: pointer; border: 1px solid #334155; transition: transform 0.2s;">
+            <span style="color: #f97316; font-weight: bold; font-size: 1.2rem;">03</span>
+            <h3 style="margin: 12px 0 8px 0; color: #f8fafc; font-size: 1.25rem;">Year Three</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Advanced Aerospace Studies</p>
+            <button style="background: transparent; border: none; color: #f97316; font-weight: 600; cursor: pointer; padding: 0;">Explore →</button>
+        </div>
+
+        <div class="year-card" onclick="selectYear(4)" style="background: #1e293b; padding: 28px; border-radius: 12px; cursor: pointer; border: 1px solid #334155; transition: transform 0.2s;">
+            <span style="color: #f97316; font-weight: bold; font-size: 1.2rem;">04</span>
+            <h3 style="margin: 12px 0 8px 0; color: #f8fafc; font-size: 1.25rem;">Year Four</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Specialisation and Design</p>
+            <button style="background: transparent; border: none; color: #f97316; font-weight: 600; cursor: pointer; padding: 0;">Explore →</button>
+        </div>
+    </div>
+
+    <div id="resources" class="resources" style="max-width: 1100px; margin: 0 auto; background: #1e293b; padding: 30px; border-radius: 12px; border: 1px solid #334155;">
+        <h2 id="year-title" style="font-size: 1.5rem; margin-bottom: 10px; color: #f8fafc;">Select an academic year</h2>
+        <p id="year-description" style="color: #94a3b8; margin-bottom: 20px;">
+            Your selected year's resources will appear here.
+        </p>
+        <div id="semester-options"></div>
+    </div>
+</section>
+
+<section class="about" id="about" style="padding: 80px 20px; text-align: center; background: #090d16; color: white;">
+    <div style="max-width: 700px; margin: 0 auto;">
+        <p class="eyebrow" style="color: #f97316; font-weight: 700; font-size: 0.85rem; margin-bottom: 12px;">BUILT FOR AEROSPACE STUDENTS</p>
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #f8fafc;">Knowledge is the foundation of flight.</h2>
+        <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6;">
+            AeroHub is a student-focused academic resource platform
+            designed to make aerospace engineering revision easier,
+            more organised and accessible.
+        </p>
+    </div>
+</section>
+
+<footer style="background: #05080f; color: #94a3b8; text-align: center; padding: 40px 20px; border-top: 1px solid #1e293b;">
+    <h3 style="color: #f8fafc; margin-bottom: 8px;">✈ AEROHUB</h3>
+    <p style="font-size: 0.9rem; margin-bottom: 6px;">Study smarter. Fly higher.</p>
+    <p style="font-size: 0.8rem; color: #64748b;">© 2026 AeroHub. All rights reserved.</p>
+</footer>
+
+<!-- Student Login Modal -->
+<div id="login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(4px);">
+    <div style="background: #ffffff; padding: 32px; border-radius: 12px; width: 90%; max-width: 380px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); box-sizing: border-box;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h3 style="margin: 0; color: #0f172a; font-size: 1.25rem; font-weight: 700;">Student Login</h3>
+            <button onclick="closeLoginModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #64748b; padding: 0; line-height: 1;">&times;</button>
+        </div>
+        <form onsubmit="handleLogin(event)">
+            <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Registration Number</label>
+                <input type="text" id="login-user" required placeholder="e.g., E241-0000/2024" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; box-sizing: border-box; outline: none;">
+            </div>
+            <div style="margin-bottom: 24px;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Password</label>
+                <input type="password" id="login-pass" required placeholder="••••••••" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; box-sizing: border-box; outline: none;">
+            </div>
+            <button type="submit" style="width: 100%; padding: 12px; background: #f97316; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95ln; transition: background 0.2s;">Sign In</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
